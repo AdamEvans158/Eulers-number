@@ -8,6 +8,8 @@ body, html{
     background-color: hsl(265, 52%, 8%);
     overflow: hidden;
     margin: 0;
+    width: 100%;
+    max-width: 425px;
 }
 
 .home-page{

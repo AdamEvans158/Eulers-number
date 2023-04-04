@@ -81,12 +81,13 @@ export function updateDigitsString(char){
         let clickNoise = new Audio("../Sounds/click.mp3");
         clickNoise.play();
     } else {
-        let wrongAudio = new Audio(localStorage.getItem("sound.key") || "../Sounds/trump wrong.mp3");
-        wrongAudio.preload = "metadata";
-        wrongAudio.play();
-        wrongAudio.addEventListener("loadedmetadata", () =>{
-            setTimeout(restartGame, wrongAudio.duration * 1000);
-        })
+        //let wrongAudio = new Audio(localStorage.getItem("sound.key") || "../Sounds/trump wrong.mp3");
+        //wrongAudio.preload = "metadata";
+        //wrongAudio.play();
+        //wrongAudio.addEventListener("loadedmetadata", () =>{
+        //    setTimeout(restartGame, wrongAudio.duration * 1000);
+        //})
+        restartGame();
     }
 }
 
