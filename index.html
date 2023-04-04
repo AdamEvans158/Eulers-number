@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Eulers Number</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/main.js" defer type="module"></script>
+</head>
+<body>
+    <section class="home-page" id="homePage">
+        <img src="./images/logo.png" alt="" class="logo">
+        
+        <div class="options">
+            <button id="btnStart" class="btn-start">Start Game</button>
+            <button id="btnDigits" class="btn-digits">Euler's Number Digits</button>
+            <button id="btnSoundOptions" class="btn-sound-options">Sound Options</button>
+            <button id="btnCredits" class="btn-credits">Credits</button>
+        </div>
+    </section>
+    <section class="digits-page" id="digitsPage">
+        <img src="./images/close.png" alt="close button" id="closeDigitsPage" class="close-btn">
+        <h1 class="digits-title">Digits</h1>
+        
+        <main class="digits-content">
+            <div class="digits-container">
+                <p class="digits" id="digits"></p>
+            </div>
+            <div class="move-buttons">
+                <img src="./images/leftArrow.png" alt="left arrow" class="btn-move btn-left" id="btnLeft">
+                <img src="./images/rightArrow.png" alt="right arrow" class="btn-move btn-right" id="btnRight">            
+                <p class="digits-range-text" id="digitsRange"> digits: 0 - 500</p>
+            </div>
+        </main>
+    </section>
+    <section id="gameSettingsPage" class="game-settings-page">
+        <img src="./images/close.png" alt="close button" id="closeSettingsPage" class="close-btn">
+        <h1 class="game-settings-title">Game Settings</h1>
+        <div class="settings">
+            <span>
+                <label for="startDigitInput" class="settings-page-label starting-digit-label">Start at digit: </label>
+                <br>
+                <input type="text" name="start digit input" id="startDigitInput" class="settings-page-input" placeholder="Enter Digit Index">
+            </span>
+            <span>
+                <label for="lastDigitInput" class="settings-page-label last-digit-label">End at digit: </label>
+                <br>
+                <input type="text" name="last digit input" id="lastDigitInput" class="settings-page-input" placeholder="Enter Digit Index">
+            </span>
+            <button class="start-game-btn" id="startGameBtn">Start Game</button>
+        </div>
+    </section>
+    <section class="game-page" id="gamePage">
+        <img src="./images/close.png" alt="close button" id="closeGamePage" class="close-btn">
+        <div class="entered-digits" id="enteredDigits">
+            <p id="digitsString"></p>
+        </div>
+        <div class="keypad">
+            <div class="key" data-value="7">
+                <p class="key-7">7</p>
+            </div>
+            <div class="key" data-value="8">
+                <p class="key-8">8</p>
+            </div>
+            <div class="key" data-value="9">
+                <p class="key-9">9</p>
+            </div>
+            <div class="key" data-value="4">
+                <p class="key-4">4</p>
+            </div>
+            <div class="key" data-value="5">
+                <p class="key-5">5</p>
+            </div>
+            <div class="key" data-value="6">
+                <p class="key-6">6</p>
+            </div>
+            <div class="key" data-value="1">
+                <p class="key-1">1</p>
+            </div>
+            <div class="key" data-value="2">
+                <p class="key-2">2</p>
+            </div>
+            <div class="key" data-value="3">
+                <p class="key-3">3</p>
+            </div>
+            <br> <!-- <br> tags to fill empty grid spaces -->
+            <div class="key" data-value="0">
+                <p class="key-0">0</p>
+            </div>
+            <br> 
+        </div>
+    </section>
+    <section class="credits-page" id="creditsPage">
+        <img src="./images/close.png" alt="close button" id="closeCreditsPage" class="close-btn">
+        <p class="arrow-credit">Arrows - <a href="https://www.flaticon.com/free-icons/play" title="play icons">Play icons created by Roundicons - Flaticon</a></p>
+        <p class="x-credit">Close Icon - <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by ariefstudio - Flaticon</a></p>
+        <p class="logo-credit">Logo - ALSO MADE BY ME, ADAM!</p>
+        <p class="code-credit">Code - ME! ADAM DID IT, ALL DONE MY ADAM FROM 11AM TO 2:40AM</p>
+    </section>
+    <section class="sounds-page" id="soundsPage">
+        <img src="./images/close.png" alt="close button" id="closeSoundsPage" class="close-btn">
+        <h1 class="sounds-page-title">Sound Options</h1>
+        <div class="sound-options">
+            <button id="trumpWrongBtn" class="trump-wrong-btn sound-btn" data-song="trump wrong.mp3">Wrong!</button>
+            <button id="wrongSongBtn" class="wrong-song-btn sound-btn" data-song="wrong sing.mp3">You're Wrong Song</button>
+            <button id="buzzerWrongBtn" class="buzzer-wrong-btn sound-btn" data-song="wrong.mp3">Buzzer</button>
+        </div>
+    </section>
+</body>
+</html>
