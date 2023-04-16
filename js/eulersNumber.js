@@ -44,29 +44,21 @@ export function last500Digits(){
 }
 
 const START_DIGIT_KEY = "start.digit.key";
-const END_DIGIT_KEY = "end.digit.key";
-
 export function loadDigitsRange(){
     const startInput = document.getElementById('startDigitInput');
-    const endInput = document.getElementById('lastDigitInput');
 
     startInput.value = localStorage.getItem(START_DIGIT_KEY) || 1;
-    endInput.value = localStorage.getItem(END_DIGIT_KEY) || 100;
 }
 
 export function updateDigitsRange(){
     const startDigit = document.getElementById('startDigitInput').value;
-    const lastDigit = document.getElementById('lastDigitInput').value;
 
     localStorage.setItem(START_DIGIT_KEY, startDigit);
-    localStorage.setItem(END_DIGIT_KEY, lastDigit);
     localStorage.setItem(INDEX_KEY, startDigit);
 }
 
-//let xOffset = -document.getElementById("enteredDigits").getBoundingClientRect().width;
-
-
 export function updateDigitsString(char){
+    let currentDigit = document.getElementById('currentDigit');
     let digitsString = document.getElementById("digitsString");
     
     let digitIndex = JSON.parse(localStorage.getItem(INDEX_KEY)) ||
@@ -77,17 +69,17 @@ export function updateDigitsString(char){
         localStorage.setItem(INDEX_KEY, digitIndex);
 
         digitsString.innerText = digitsString.innerText.replace("?", char) + "?";
-
+        currentDigit.innerText = "Digit: " + (digitIndex - 1);
         let clickNoise = new Audio("../Sounds/click.mp3");
         clickNoise.play();
     } else {
-        //let wrongAudio = new Audio(localStorage.getItem("sound.key") || "../Sounds/trump wrong.mp3");
-        //wrongAudio.preload = "metadata";
-        //wrongAudio.play();
-        //wrongAudio.addEventListener("loadedmetadata", () =>{
-        //    setTimeout(restartGame, wrongAudio.duration * 1000);
-        //})
-        restartGame();
+        let wrongAudio = new Audio(localStorage.getItem("sound.key") || "../Sounds/trump wrong.mp3");
+        wrongAudio.preload = "metadata";
+        wrongAudio.play();
+        wrongAudio.addEventListener("loadedmetadata", () =>{
+            setTimeout(restartGame, wrongAudio.duration * 1000);
+            currentDigit.innerText = "Digit: " + (localStorage.getItem(START_DIGIT_KEY) - 1)
+        })
     }
 }
 

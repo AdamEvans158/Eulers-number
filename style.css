@@ -224,3 +224,7 @@ body, html{
     width: 220px;
     gap: 20px;
 }
+
+.current-digit{
+    text-align: center;
+}
