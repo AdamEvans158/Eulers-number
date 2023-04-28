@@ -9,6 +9,15 @@ body, html{
     overflow: hidden;
     margin: 0;
     width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.pages{
+    height: 100%;
     max-width: 425px;
 }
 
@@ -116,23 +125,25 @@ body, html{
     --margin: 80px;
     position: relative;
     display: flex;
+    align-items: center;
     flex-direction: column;
     text-align: center;
     gap: 25px;
-    width: calc(100% - 2 * var(--margin));
+    width: 100%;
 }
 
 .settings-page-input{
     box-sizing: border-box;
     background-color: hsl(265, 52%, 11%);
     outline: none;
-    border: 2px solid transparent;
+    border: 2px solid white;
     height: 40px;
     width: 100%;
     border-radius: 40px;
     text-align: center;
     font-size: 1.5rem;
     transition: all 250ms;
+    max-width: 225px;
 }
 
 .settings-page-input:focus{
@@ -143,10 +154,12 @@ body, html{
 .start-game-btn{
     background-color: hsl(265, 52%, 11%);
     height: 50px;
-    border: 2px solid hsl(0, 0%, 50%);
+    border: 2px solid white;
     font-size: 1.5rem;
     border-radius: 8px;
     transition: all 250ms;
+    width: 100%;
+    max-width: 225px;
 }
 
 .start-game-btn:hover{
